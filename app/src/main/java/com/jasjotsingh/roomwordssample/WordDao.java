@@ -11,6 +11,9 @@ import java.util.List;
 @Dao
 public interface WordDao {
 
+    @Query("SELECT * from word_table LIMIT 1")
+    Word[] getAnyWord();
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Word word);
 
